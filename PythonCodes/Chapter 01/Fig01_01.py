@@ -4,6 +4,8 @@ Created on Thu Nov 28 2018
 Characteristic function and density for normal(10,1)
 @author: Lech A. Grzelak
 """
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as st
@@ -12,7 +14,7 @@ from mpl_toolkits import mplot3d
 def plotNormalPDF_CDF_CHF():
     mu    = 10.0
     sigma = 1.0
-    i     = np.complex(0,1)
+    i     = np.complex_(1) #np.cdouble(1)  = complex128
     chf   = lambda u: np.exp(i * mu * u - sigma * sigma * u * u / 2.0)
     pdf   = lambda x: st.norm.pdf(x,mu,sigma)
     cdf   = lambda x: st.norm.cdf(x,mu,sigma)
